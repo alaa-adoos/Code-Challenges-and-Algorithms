@@ -1,1 +1,1 @@
-![whiteboardImage](./LinkedList.jpg)
+![whiteboardImage](./Untitled.png)
