@@ -1,66 +1,48 @@
-
 class Node:
-    '''   
-     take Node data and next 
     '''
-    def __init__(self,data):
-        self.data=data
-        self.next=None
-
+     class Node have a node a vlue and next
+    '''
+    def __init__(self):
+        self.val = None
+        self.next = None
 
 class LinkedList:
     '''
-    take head of linkedlist
-    and methods that do a print nodes or delete node 
+     print nodes and remove node between 2 nodes 
     '''
     def __init__(self):
-        self.head=None
+        self.head = None
+        self.next = None
+    def append(self, new_val):
+        node = Node()
+        node.val = new_val
+        node.next = self.head
+        self.head = node
+        return self.head
+    
+    def __str__(self):
+            mylist=[]
+            current = self.head
+            while current:
+                mylist.append(current.val)
+                current = current.next
+                
+            return (mylist)
 
-    def insert(self,newNode):
-        '''
-         insert a new node 
-        '''
-        
-        if self.head is None:
-            self.head=newNode
-        else:
-            lastNode=self.head
-            while True:
-                if lastNode.next is None:
-                    break
-                lastNode=lastNode.next
-            lastNode.next=newNode    
-
-
-    def delete(self,node):
-        '''
-         take  node data as argument and remove it
-        '''
-        currentNode=self.head
-
-        while True:
-            if currentNode.data==node:
-                previousNode.next=currentNode.next
-                currentNode.next==None
-                break
-
-            previousNode=currentNode    
-            currentNode=currentNode.next    
+            
+    def deleteNode(self,pointer):
+        pointer.val = pointer.next.val
+        pointer.next = pointer.next.next
 
 
-    def print_list(self):
-          '''
-          print each data node in list []
-          
-          '''
-
-          currentNode=self.head
-          data=[] 
-          while True:
-            if currentNode is None:
-                break
-            data.append(currentNode.data)
-            currentNode=currentNode.next
-          return data  
-
-
+if __name__ == "__main__":
+    llist = LinkedList()
+    node1 =llist.append(9)
+    node2 =llist.append(1)
+    node3 =llist.append(5)
+    node4 =llist.append(4)
+    print ("Created Linked List: ")
+    print(llist.__str__())
+    llist.deleteNode(node3)
+    print("linked list after deletion ")
+    print(llist.__str__())
