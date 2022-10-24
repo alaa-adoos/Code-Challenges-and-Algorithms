@@ -1,0 +1,1 @@
+![whiteboardImage](./codeChallenge2.jpg)
