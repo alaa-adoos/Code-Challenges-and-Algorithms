@@ -1,0 +1,1 @@
+![stack](./white_board.jpg)
